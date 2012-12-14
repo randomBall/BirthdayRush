@@ -3,29 +3,21 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
-import states.*;
-
 
 public class Game extends  StateBasedGame
 {
-	final int MAINMENUSTATE = 0;
-	
+
 	public Game(String name) 
 	{
 		super(name);
 		
 		// TODO Add states
-		this.addState(new MainMenuState(MAINMENUSTATE));
 	}
 
 	@Override
-	public void initStatesList(GameContainer gc) throws SlickException 
+	public void initStatesList(GameContainer arg0) throws SlickException 
 	{
-		// TODO get and initialize states
-		this.getState(MAINMENUSTATE).init(gc, this);
-		
-		// TODO enter state
-		this.enterState(MAINMENUSTATE);
+		// TODO Auto-generated method stub
 		
 	}
 
