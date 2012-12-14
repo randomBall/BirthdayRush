@@ -1,17 +1,34 @@
 package main;
 
+import layer.Layer;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+
+import platform.PlatformGenerator;
 
 public class PlayState extends BasicGameState 
 {
 	int id;
 	
+	//-----Graphics-----//
 	Image background;
+	
+	//---Game Objects---//
+	PlatformGenerator pGen;
+	
+	//------Layers------//
+	Layer platformLayer;
+	
+	//----LOLPhysics----//
+	public static float playerSpeed = 0;
+	float gravity = 0.0981f;				// Change this if too fast or slow
+	
 	
 	public PlayState(int id)
 	{
@@ -19,21 +36,27 @@ public class PlayState extends BasicGameState
 	}
 
 	@Override
-	public void init(GameContainer container, StateBasedGame game) throws SlickException 
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException 
 	{
 		background = new Image("Graphics/common/bg_sky.png");
+		
+		//platformLayer.init();
+		//pGen.init(gc, platformLayer);
 	}
 
 	@Override
-	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException 
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
 		background.draw();
+		//platformLayer.render(gc, sbg, g);
 	}
 
 	@Override
-	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException 
+	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException 
 	{
-		// TODO Auto-generated method stub
+		Input playerInput = gc.getInput();
+		
+		//platformLayer.update(gc, sbg, delta, playerInput);
 		
 	}
 

@@ -77,7 +77,7 @@ public abstract class GameObject
 	{
 		collisionBox.setSize(width, height);
 	}
-
+	
 	public void setActive(boolean active)
 	{
 		this.active = active;

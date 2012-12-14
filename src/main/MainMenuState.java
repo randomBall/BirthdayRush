@@ -12,6 +12,7 @@ public class MainMenuState extends BasicGameState
 {
 	int id;
 
+	//-----Graphics-----//
 	Image background, title;
 	
 	public MainMenuState(int id)

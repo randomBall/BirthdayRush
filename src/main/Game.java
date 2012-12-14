@@ -7,8 +7,10 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Game extends  StateBasedGame
 {
+	//-----State IDs-----//
 	public static final int MAINMENUSTATE = 0;
 	public static final int PLAYSTATE = 1;
+	
 	
 	public Game(String name) 
 	{

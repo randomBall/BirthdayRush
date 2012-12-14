@@ -35,4 +35,14 @@ public abstract class StaticObject extends GameObject
 	{
 		sprite.draw(position.x, position.y);
 	}
+	
+	public float getWidth()
+	{
+		return sprite.getWidth();
+	}
+	
+	public float getHeight()
+	{
+		return sprite.getHeight();
+	}
 }
