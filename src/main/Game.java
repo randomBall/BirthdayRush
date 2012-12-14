@@ -8,7 +8,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Game extends  StateBasedGame
 {
 	public static final int MAINMENUSTATE = 0;
-	public static final int GAMEPLAYSTATE = 1;
+	public static final int PLAYSTATE = 1;
 	
 	public Game(String name) 
 	{
@@ -16,7 +16,7 @@ public class Game extends  StateBasedGame
 		
 		// TODO Add states
 		this.addState(new MainMenuState(MAINMENUSTATE));
-		this.addState(new GamePlayState(GAMEPLAYSTATE));
+		this.addState(new PlayState(PLAYSTATE));
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class Game extends  StateBasedGame
 	{
 		// TODO get and initialize states
 		this.getState(MAINMENUSTATE).init(gc, this);
-		//this.getState(GAMEPLAYSTATE).init(gc, this);
+		this.getState(PLAYSTATE).init(gc, this);
 		
 		// TODO enter state
 		this.enterState(MAINMENUSTATE);

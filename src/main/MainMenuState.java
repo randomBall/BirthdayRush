@@ -29,7 +29,7 @@ public class MainMenuState extends BasicGameState
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
-		background.draw();
+		background.draw(0,0);
 		title.drawCentered(gc.getWidth()/2, gc.getHeight()/2);
 		
 	}
