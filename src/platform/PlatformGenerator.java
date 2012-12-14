@@ -9,9 +9,10 @@ public class PlatformGenerator
 {
 	//---Floor properties---//
 	/*
-	 * {<image location>, <box X>, <box Y>, <box width>, <box height>}
+	 * {<id>, <image location>, <box X>, <box Y>, <box width>, <box height>}
 	 */
-	String[] floor_low = {"Graphics/floor/floor_low.png", "0", "32", "1024", "165"};
+	String[][] floors = {{"1", "Graphics/floor/floor_low_1.png", "0", "69", "512", "98"},
+						 {"2", "Graphics/floor/floor_mid_2.png", "0", "69", "512", "244"}};
 	
 	
 	Layer platformLayer;
@@ -22,7 +23,7 @@ public class PlatformGenerator
 		platformLayer = l;
 		
 		// Create and configure first floor
-		currFloor = createFloor(floor_low);
+		currFloor = createFloor(floors[0]);
 		currFloor.setPosY(gc.getHeight() - currFloor.getHeight());
 		
 		// Add to layer
@@ -33,27 +34,42 @@ public class PlatformGenerator
 	{
 		Floor newFloor;
 		float bX, bY, bW, bH;
+		int id;
 		
-		bX = Float.parseFloat(s[1]);
-		bY = Float.parseFloat(s[2]);
-		bW = Float.parseFloat(s[3]);
-		bH = Float.parseFloat(s[4]);
+		id = Integer.parseInt(s[0]);
+		bX = Float.parseFloat(s[2]);
+		bY = Float.parseFloat(s[3]);
+		bW = Float.parseFloat(s[4]);
+		bH = Float.parseFloat(s[5]);
 		
 		newFloor =  new Floor();
-		newFloor.init(s[0], 0, 0, bX, bY, bW, bH);
+		newFloor.setID(id);
+		newFloor.init(s[1], 0, 0, bX, bY, bW, bH);
 		return newFloor;
 	}
 	
 	public void generate(GameContainer gc) throws SlickException
 	{
-		float posX = currFloor.getPosX() + currFloor.getWidth();
+		float pitWidth = 10;
+		float posX = currFloor.getPosX() + currFloor.getWidth() + pitWidth;
 		
 		if(currFloor.getPosX() < gc.getWidth())
 		{
-			currFloor = createFloor(floor_low);
+			int index = randPlatformID();
+			currFloor = createFloor(floors[index]);
 			currFloor.setPosX(posX);
 			currFloor.setPosY(gc.getHeight() - currFloor.getHeight());
 			platformLayer.addObject(currFloor);
 		}
+	}
+	
+	public int randPlatformID()
+	{
+		int lowest = 0;
+		int highest = floors.length - 1;
+		if(currFloor.getID() == 0)
+			lowest = 1;
+		
+		return (int)(Math.random() * (highest - lowest + 1)) + lowest;
 	}
 }
