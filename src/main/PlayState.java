@@ -30,6 +30,8 @@ public class PlayState extends BasicGameState
 	float gravity = 0.0981f;				// Change this if too fast or slow
 	float acceleration = 0.0003f;
 	
+	//-------misc-------//
+	int i;
 	
 	public PlayState(int id)
 	{
@@ -53,6 +55,9 @@ public class PlayState extends BasicGameState
 	{
 		background.draw();
 		platformLayer.render(gc, sbg, g);
+		
+		i = platformLayer.size();
+		g.drawString(Integer.toString(i), 10, 13);
 	}
 
 	@Override

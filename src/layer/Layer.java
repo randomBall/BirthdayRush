@@ -41,4 +41,9 @@ public class Layer
 	{
 		entries.add(gO);
 	}
+	
+	public int size()
+	{
+		return entries.size();
+	}
 }
