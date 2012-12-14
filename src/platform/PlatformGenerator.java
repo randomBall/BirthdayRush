@@ -43,4 +43,17 @@ public class PlatformGenerator
 		newFloor.init(s[0], 0, 0, bX, bY, bW, bH);
 		return newFloor;
 	}
+	
+	public void generate(GameContainer gc) throws SlickException
+	{
+		float posX = currFloor.getPosX() + currFloor.getWidth();
+		
+		if(currFloor.getPosX() < gc.getWidth())
+		{
+			currFloor = createFloor(floor_low);
+			currFloor.setPosX(posX);
+			currFloor.setPosY(gc.getHeight() - currFloor.getHeight());
+			platformLayer.addObject(currFloor);
+		}
+	}
 }
