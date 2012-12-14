@@ -19,7 +19,7 @@ public class PlatformGenerator
 	
 	public void init(GameContainer gc, Layer l) throws SlickException
 	{
-		//platformLayer.init();
+		platformLayer = l;
 		
 		// Create and configure first floor
 		currFloor = createFloor(floor_low);
@@ -40,7 +40,7 @@ public class PlatformGenerator
 		bH = Float.parseFloat(s[4]);
 		
 		newFloor =  new Floor();
-		newFloor.init(s[1], 0, 0, bX, bY, bW, bH);
+		newFloor.init(s[0], 0, 0, bX, bY, bW, bH);
 		return newFloor;
 	}
 }

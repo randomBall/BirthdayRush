@@ -15,7 +15,7 @@ public class Layer
 	
 	public void init()
 	{
-		entries = new ArrayList<GameObject>();
+		entries = new ArrayList<>();
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sbg, int delta, Input i)

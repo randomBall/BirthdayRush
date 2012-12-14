@@ -35,9 +35,9 @@ public class Game extends  StateBasedGame
 
 	public static void main(String[] args) throws SlickException
 	{
-		AppGameContainer gameWindow = new AppGameContainer(new Game("Birthday Rush"));
-		gameWindow.setDisplayMode(1024, 480, false);
+		AppGameContainer window = new AppGameContainer(new Game("Temp Name"));
+		window.setDisplayMode(1024, 480, false);
 		
-		gameWindow.start();
+		window.start();
 	}
 }

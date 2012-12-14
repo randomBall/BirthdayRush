@@ -26,7 +26,7 @@ public class PlayState extends BasicGameState
 	Layer platformLayer;
 	
 	//----LOLPhysics----//
-	public static float playerSpeed = 0;
+	public static float playerSpeed = 0.05f;
 	float gravity = 0.0981f;				// Change this if too fast or slow
 	
 	
@@ -40,15 +40,18 @@ public class PlayState extends BasicGameState
 	{
 		background = new Image("Graphics/common/bg_sky.png");
 		
-		//platformLayer.init();
-		//pGen.init(gc, platformLayer);
+		platformLayer = new Layer();				// Dunno why I have to put this
+		platformLayer.init();
+		
+		pGen = new PlatformGenerator();
+		pGen.init(gc, platformLayer);
 	}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
 		background.draw();
-		//platformLayer.render(gc, sbg, g);
+		platformLayer.render(gc, sbg, g);
 	}
 
 	@Override
@@ -56,7 +59,7 @@ public class PlayState extends BasicGameState
 	{
 		Input playerInput = gc.getInput();
 		
-		//platformLayer.update(gc, sbg, delta, playerInput);
+		platformLayer.update(gc, sbg, delta, playerInput);
 		
 	}
 
