@@ -29,7 +29,7 @@ public class MainMenuState extends BasicGameState
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
-		background.draw(0,0);
+		background.draw();
 		title.drawCentered(gc.getWidth()/2, gc.getHeight()/2);
 		
 	}
@@ -39,7 +39,8 @@ public class MainMenuState extends BasicGameState
 	{
 		Input playerInput = gc.getInput();
 		
-		if(playerInput.isKeyDown(Input.KEY_SPACE));
+		if(playerInput.isKeyDown(Input.KEY_SPACE))
+			sbg.enterState(Game.PLAYSTATE);						// The Game would enter Play state
 	}
 
 	@Override
