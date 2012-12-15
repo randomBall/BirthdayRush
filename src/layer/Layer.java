@@ -23,6 +23,9 @@ public class Layer
 		for(int n = 0; n < entries.size(); n++)
 		{
 			entries.get(n).update(gc, sbg, delta, i);
+			
+			if(!entries.get(n).isActive())
+				entries.remove(n);
 		}
 	}
 	
@@ -31,9 +34,6 @@ public class Layer
 		for(int n = 0; n < entries.size(); n++)
 		{
 			entries.get(n).render(gc, sbg, g);
-			
-			if(!entries.get(n).isActive())
-				entries.remove(n);
 		}
 	}
 	

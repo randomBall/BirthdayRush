@@ -63,7 +63,7 @@ public class PlayState extends BasicGameState
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException 
 	{
-		playerSpeed += acceleration/16;
+		playerSpeed += acceleration / 3;
 		
 		Input playerInput = gc.getInput();
 		

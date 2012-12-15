@@ -11,8 +11,8 @@ public class PlatformGenerator
 	/*
 	 * {<id>, <image location>, <box X>, <box Y>, <box width>, <box height>}
 	 */
-	String[][] floors = {{"1", "Graphics/floor/floor_low_1.png", "0", "69", "512", "98"},
-						 {"2", "Graphics/floor/floor_mid_2.png", "0", "69", "512", "244"}};
+	String[][] floors = {{"1", "Graphics/floor/floor_low_", "0", "69", "512", "98"},
+						 {"2", "Graphics/floor/floor_mid_", "0", "69", "512", "244"}};
 	
 	
 	Layer platformLayer;
