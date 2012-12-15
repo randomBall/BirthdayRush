@@ -37,6 +37,7 @@ public class Game extends  StateBasedGame
 	{
 		AppGameContainer window = new AppGameContainer(new Game("Temp Name"));
 		window.setDisplayMode(1024, 480, false);
+		//window.setVSync(true);
 		
 		window.start();
 	}
